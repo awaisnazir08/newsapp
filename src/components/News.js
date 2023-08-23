@@ -11,11 +11,10 @@ export class News extends Component {
   }
   async componentDidMount() {
     const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=f0e4417198644166b22113c6187c0cfd`;
-    let data = await fetch(apiUrl);      //takes a url and returns a promise
+    let data = await fetch(apiUrl); //takes a url and returns a promise
     let parsedData = await data.json();
     console.log(parsedData);
-    this.setState({articles:parsedData.articles})
-
+    this.setState({ articles: parsedData.articles });
 
     // fetch(apiUrl)
     //   .then((response) => response.json())
@@ -47,17 +46,15 @@ export class News extends Component {
                     ? element.description.slice(0, 88) + "..."
                     : "Click below to read more"
                 }
-                imageUrl={element.urlToImage? element.urlToImage: "https://scitechdaily.com/images/Brain-Neurons-Rendering-Art.jpg"}
+                imageUrl={
+                  element.urlToImage
+                    ? element.urlToImage
+                    : "https://scitechdaily.com/images/Brain-Neurons-Rendering-Art.jpg"
+                }
                 newsUrl={element.url}
               />
             );
           })}
-
-          {/* <NewsItem title="mytitle" description="mydescription" />
-          <NewsItem title="mytitle" description="mydescription" />
-          <NewsItem title="mytitle" description="mydescription" />
-          <NewsItem title="mytitle" description="mydescription" />
-          <NewsItem title="mytitle" description="mydescription" /> */}
         </div>
       </>
     );
