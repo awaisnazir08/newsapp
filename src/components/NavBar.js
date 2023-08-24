@@ -2,15 +2,16 @@ import React, { Component } from "react";
 
 export class NavBar extends Component {
   render() {
+    let {mode, modeToggler}=this.props;
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               NewsMonkey
             </a>
             <button
-              className="navbar-toggler"
+              className="navbar-toggler "
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -37,6 +38,18 @@ export class NavBar extends Component {
                 </li>
               </ul>
             </div>
+          </div>
+          <div className="form-check form-switch">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              onClick={modeToggler}
+            />
+            <label  style={{width:"100px"}} className={`form-check-label text-${mode==='light'?'dark':'light'}`} htmlFor="flexSwitchCheckDefault" >
+              Dark Mode
+            </label>
           </div>
         </nav>
       </div>
