@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Link} from "react-router-dom";
 export class NavBar extends Component {
 
   render() {
@@ -33,44 +33,44 @@ export class NavBar extends Component {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
+                  <Link className="nav-link" to="/f">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
+                  <Link className="nav-link" to="/sports">
                     Sports
-                  </button>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
+                  <Link className="nav-link" to="/entertainment">
                     Entertainment
-                  </button>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
+                  <Link className="nav-link" to="/business">
                     Business
-                  </button>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
+                  <Link className="nav-link" to="/technology">
                     Technology
-                  </button>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
+                  <Link className="nav-link" to="/health">
                     Health
-                  </button>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
+                  <Link className="nav-link" to="/science">
                     Science
-                  </button>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
+                  <Link className="nav-link" to="/">
                     General
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>

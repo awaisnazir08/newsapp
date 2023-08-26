@@ -17,8 +17,8 @@ export class News extends Component {
   static defaultProps={
     country: 'us',
     pageSize: '15',
-    category:'general'
-
+    category:'general',
+    heading:'NewsMonkey - Top Headlines'
   }
   static propTypes={
     country:propTypes.string.isRequired,
@@ -74,11 +74,11 @@ export class News extends Component {
   }
 
   render() {
-    let { mode } = this.props;
+    let { mode,heading } = this.props;
     return (
       <>
         <h1 className={`mx-5 text-${mode === "light" ? "dark" : "light"}`}>
-          NewsMonkey - Top Headlines
+          {heading}
         </h1>
         {this.state.loader && < Loader/>}
         <div className="container my-3">
@@ -97,6 +97,9 @@ export class News extends Component {
                 }
                 newsUrl={element.url}
                 mode={mode}
+                author={element.author? element.author: 'Unknown'}
+                date={element.publishedAt.slice(0,10)}
+                time={element.publishedAt.slice(11,-1)}
               />
             );
           })}
