@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 export class NavBar extends Component {
+
   render() {
     let {mode, modeToggler}=this.props;
     return (
@@ -35,6 +36,41 @@ export class NavBar extends Component {
                   <a className="nav-link" href="/">
                     About
                   </a>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link">
+                    Sports
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link">
+                    Entertainment
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link">
+                    Business
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link">
+                    Technology
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link">
+                    Health
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link">
+                    Science
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="nav-link">
+                    General
+                  </button>
                 </li>
               </ul>
             </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Loader from "./Loader";
 import "./News.css";
+import propTypes from 'prop-types'
 export class News extends Component {
   constructor() {
     super();
@@ -13,10 +14,21 @@ export class News extends Component {
       totalPages: 0,
     };
   }
+  static defaultProps={
+    country: 'us',
+    pageSize: '15',
+    category:'general'
+
+  }
+  static propTypes={
+    country:propTypes.string.isRequired,
+    pageSize: propTypes.number.isRequired,
+    general: propTypes.string.isRequired
+  }
   handleNextPage = async () => {
     if (this.state.totalPages > this.state.page) {
       this.setState({ page: this.state.page + 1 }, async () => {
-        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&page=${this.state.page}&pageSize=${this.props.pageSize}&apiKey=f0e4417198644166b22113c6187c0cfd`;
+        const apiUrl = `https://newsapi.org/v2/top-headlines?category=${this.props.category}&country=${this.props.country}&page=${this.state.page}&pageSize=${this.props.pageSize}&apiKey=f0e4417198644166b22113c6187c0cfd`;
         this.setState({loader:true});
         let data = await fetch(apiUrl);
         let parsedData = await data.json();
@@ -30,7 +42,7 @@ export class News extends Component {
   handlePrevPage = async () => {
     if (this.state.page>1) {
       this.setState({ page: this.state.page - 1 }, async () => {
-        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&page=${this.state.page}&pageSize=${this.props.pageSize}&apiKey=f0e4417198644166b22113c6187c0cfd`;
+        const apiUrl = `https://newsapi.org/v2/top-headlines?category=${this.props.category}&country=${this.props.country}&page=${this.state.page}&pageSize=${this.props.pageSize}&apiKey=f0e4417198644166b22113c6187c0cfd`;
         this.setState({loader:true});
         let data = await fetch(apiUrl);
         let parsedData = await data.json();
@@ -44,7 +56,7 @@ export class News extends Component {
 
   async componentDidMount() {
     this.setState({loader:true});
-    const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&page=1&pageSize=${this.props.pageSize}&apiKey=f0e4417198644166b22113c6187c0cfd`;
+    const apiUrl = `https://newsapi.org/v2/top-headlines?category=${this.props.category}&country=${this.props.country}&page=1&pageSize=${this.props.pageSize}&apiKey=f0e4417198644166b22113c6187c0cfd`;
     let data = await fetch(apiUrl);
     let parsedData = await data.json();
     console.log(parsedData);
@@ -59,20 +71,6 @@ export class News extends Component {
     this.setState({loader:false});
 
     console.log(this.state.totalPages, this.state.totalResults);
-
-    // fetch(apiUrl)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     if (data.status === "ok") {
-    //       this.setState({ articles: data.articles });
-    //       console.log(this.state.articles); // Do something with the articles array
-    //     } else {
-    //       console.error("Error fetching data");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error("Fetch error:", error);
-    //   });
   }
 
   render() {
