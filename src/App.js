@@ -9,6 +9,7 @@ import {
   Routes,
 } from "react-router-dom";
 export default class App extends Component {
+  apiKey= process.env.REACT_APP_NEWS_API_KEY
   constructor(){
     super();
     this.state={
@@ -65,15 +66,15 @@ export default class App extends Component {
       <>
         <div>
           <Router>
-          <NavBar mode={this.state.mode} modeToggler={this.modeToggler} />
+          <NavBar mode={this.state.mode} apiKey={this.apiKey} modeToggler={this.modeToggler} />
           <Routes>
-            <Route exact path='/' element={<News key="general" mode={this.state.mode} pageSize={this.state.pageSize} category='general' country={this.state.country}/>}/>
-            <Route exact path='/entertainment' element={<News key="entertainment" heading='NewsMonkey - Top Entertainment Headlines' mode={this.state.mode} pageSize={this.state.pageSize} category='entertainment' country={this.state.country}/>}/>
-            <Route exact path='/business' element={<News key="business" heading='NewsMonkey - Top Business Headlines' mode={this.state.mode} pageSize={this.state.pageSize} category='business' country={this.state.country}/>}/>
-            <Route exact path='/technology' element={<News key="technology" heading='NewsMonkey - Top Technology Headlines' mode={this.state.mode} pageSize={this.state.pageSize} category='technology' country={this.state.country}/>}/>
-            <Route exact path='/sports' element={<News key="sports" heading='NewsMonkey - Top Sports Headlines' mode={this.state.mode} pageSize={this.state.pageSize} category='sports' country={this.state.country}/>}/>
-            <Route exact path='/science' element={<News key="science"  heading='NewsMonkey - Top Science Headlines' mode={this.state.mode} pageSize={this.state.pageSize} category='science' country={this.state.country}/>}/>
-            <Route exact path='/health' element={<News key="health" heading='NewsMonkey - Top Health Headlines' mode={this.state.mode} pageSize={this.state.pageSize} category='health' country={this.state.country}/>}/>
+            <Route exact path='/' element={<News key="general" mode={this.state.mode} apiKey={this.apiKey} pageSize={this.state.pageSize} category='general' country={this.state.country}/>}/>
+            <Route exact path='/entertainment' element={<News key="entertainment" heading='NewsMonkey - Top Entertainment Headlines' mode={this.state.mode} apiKey={this.apiKey} pageSize={this.state.pageSize} category='entertainment' country={this.state.country}/>}/>
+            <Route exact path='/business' element={<News key="business" heading='NewsMonkey - Top Business Headlines' mode={this.state.mode} apiKey={this.apiKey} pageSize={this.state.pageSize} category='business' country={this.state.country}/>}/>
+            <Route exact path='/technology' element={<News key="technology" heading='NewsMonkey - Top Technology Headlines' mode={this.state.mode} apiKey={this.apiKey} pageSize={this.state.pageSize} category='technology' country={this.state.country}/>}/>
+            <Route exact path='/sports' element={<News key="sports" heading='NewsMonkey - Top Sports Headlines' mode={this.state.mode} apiKey={this.apiKey} pageSize={this.state.pageSize} category='sports' country={this.state.country}/>}/>
+            <Route exact path='/science' element={<News key="science"  heading='NewsMonkey - Top Science Headlines' mode={this.state.mode} apiKey={this.apiKey} pageSize={this.state.pageSize} category='science' country={this.state.country}/>}/>
+            <Route exact path='/health' element={<News key="health" heading='NewsMonkey - Top Health Headlines' mode={this.state.mode} apiKey={this.apiKey} pageSize={this.state.pageSize} category='health' country={this.state.country}/>}/>
           </Routes>
           </Router>
         </div>
