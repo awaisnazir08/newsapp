@@ -31,7 +31,7 @@ const App = () => {
           <Router>
           <NavBar mode={mode} apiKey={apiKey} modeToggler={modeToggler} />
           <Routes>
-            <Route exact path='/' element={<News key="general" mode={mode} apiKey={apiKey} pageSize={pageSize} category='general' country={country}/>}/>
+            <Route exact path='/' element={<News key="generalNews" mode={mode} apiKey={apiKey} pageSize={pageSize} category='general' country={country}/>}/>
             <Route exact path='/entertainment' element={<News key="entertainment" heading='NewsMonkey - Top Entertainment Headlines' mode={mode} apiKey={apiKey} pageSize={pageSize} category='entertainment' country={country}/>}/>
             <Route exact path='/business' element={<News key="business" heading='NewsMonkey - Top Business Headlines' mode={mode} apiKey={apiKey} pageSize={pageSize} category='business' country={country}/>}/>
             <Route exact path='/technology' element={<News key="technology" heading='NewsMonkey - Top Technology Headlines' mode={mode} apiKey={apiKey} pageSize={pageSize} category='technology' country={country}/>}/>

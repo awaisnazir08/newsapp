@@ -5,7 +5,12 @@ const NavBar = (props) =>  {
     let {mode, modeToggler}= props;
     return (
       <div>
-        <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
+        <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`} style={{
+          position:'fixed',
+          width:'100%',
+          top: 0,
+          zIndex: 100, // Ensure it's above other content
+        }}>
           <div className="container-fluid">
             <a className="navbar-brand" href="/">
               NewsMonkey

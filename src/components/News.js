@@ -23,7 +23,7 @@ const News = (props) => {
     let parsedData = await data.json();
       setArticles(parsedData.articles)
       setTotalResults(parsedData.totalResults);
-      setLoaderProgress(loaderProgress+20)
+      // setLoaderProgress(loaderProgress+20)
       const timeoutId = setTimeout(() => {
       setLoaderProgress(100)
       }, 1000); 
@@ -32,6 +32,7 @@ const News = (props) => {
   }
   useEffect(()=>{
     updateNews();
+    //eslint-disable-next-line
   },[])
 
   const fetchMoreData= async ()=>{
