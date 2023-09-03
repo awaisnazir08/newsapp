@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import {Link} from "react-router-dom";
-export class NavBar extends Component {
+const NavBar = (props) =>  {
 
-  render() {
-    let {mode, modeToggler}=this.props;
+    let {mode, modeToggler}= props;
     return (
       <div>
         <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
@@ -91,6 +90,5 @@ export class NavBar extends Component {
       </div>
     );
   }
-}
 
 export default NavBar;
