@@ -1,0 +1,9 @@
+
+@media (max-width: 992px) {
+    .mode-button{
+        margin-left: 10px;
+        /* position: relative;
+        left:10px; */
+        margin-top: 10px;
+    }
+}

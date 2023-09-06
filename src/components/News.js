@@ -56,7 +56,7 @@ const News = (props) => {
         onLoaderFinished={()=>setLoaderProgress(0)}
        />
        </div>
-        <h1 className={`mx-5 text-${mode === "light" ? "dark" : "light"}`}>
+        <h1 className={`mx-5 top-heading text-${mode === "light" ? "dark" : "light"}`}>
           {heading}
         </h1>
         {loader && < Loader/>}

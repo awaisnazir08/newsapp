@@ -1,4 +1,5 @@
 import React from "react";
+import './NavBar.css'
 import {Link} from "react-router-dom";
 const NavBar = (props) =>  {
 
@@ -79,7 +80,7 @@ const NavBar = (props) =>  {
               </ul>
             </div>
           </div>
-          <div className="form-check form-switch">
+          <div className="form-check form-switch mode-button">
             <input
               className="form-check-input"
               type="checkbox"
